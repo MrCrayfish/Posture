@@ -1,0 +1,53 @@
+modLoader="javafml"
+loaderVersion="[37,)"
+license="GPL3"
+
+[[mods]]
+modId="posture"
+version="0.1.0"
+displayName="Posture"
+updateJSONURL="https://mrcrayfish.com/modupdatejson?id=posture"
+displayURL="https://mrcrayfish.com/mods?id=posture"
+#logoFile="framework.png"
+authors="MrCrayfish"
+description="A library YEP"
+
+[[mods]]
+modId="pose_player_test"
+version="0.1.0"
+displayName="Pose Player Test"
+authors="MrCrayfish"
+description=""
+
+[[mods]]
+modId="render_player_test"
+version="0.1.0"
+displayName="Render Player Test"
+authors="MrCrayfish"
+description=""
+
+[[dependencies.posture]]
+    modId="forge"
+    mandatory=true
+    versionRange="[37.0.109,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.posture]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.pose_player_test]]
+    modId="posture"
+    mandatory=true
+    versionRange="[0.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.render_player_test]]
+    modId="posture"
+    mandatory=true
+    versionRange="[0.1.0,)"
+    ordering="NONE"
+    side="BOTH"
