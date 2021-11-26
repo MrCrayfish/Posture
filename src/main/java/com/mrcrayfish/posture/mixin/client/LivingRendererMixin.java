@@ -1,11 +1,9 @@
 package com.mrcrayfish.posture.mixin.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mrcrayfish.posture.client.RenderingPlayerInfo;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.PlayerModel;
-import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.EntityType;
