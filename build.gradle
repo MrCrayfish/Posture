@@ -24,7 +24,7 @@ archivesBaseName = 'posture'
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
 mixin {
-    add sourceSets.main, "obfuscate.refmap.json"
+    add sourceSets.main, "posture.refmap.json"
 }
 
 minecraft {

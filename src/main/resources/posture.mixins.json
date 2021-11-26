@@ -4,7 +4,7 @@
   "plugin": "com.mrcrayfish.posture.mixin.PostureMixinPlugin",
   "compatibilityLevel": "JAVA_8",
   "minVersion": "0.8",
-  "refmap": "obfuscate.refmap.json",
+  "refmap": "posture.refmap.json",
   "client": [
     "client.AgeableListModelMixin",
     "client.LivingRendererMixin",
