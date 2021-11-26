@@ -2,15 +2,18 @@ buildscript {
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
         maven { url = 'https://maven.parchmentmc.org' }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
@@ -20,6 +23,10 @@ archivesBaseName = 'posture'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(16)
 
+mixin {
+    add sourceSets.main, "obfuscate.refmap.json"
+}
+
 minecraft {
     mappings channel: 'parchment', version: '2021.10.24-1.17.1'
 
@@ -28,6 +35,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=posture.mixins.json"
             mods {
                 posture {
                     source sourceSets.main
@@ -40,6 +48,7 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+            arg "-mixin.config=posture.mixins.json"
             mods {
                 posture {
                     source sourceSets.main
@@ -72,6 +81,7 @@ repositories {
 dependencies {
     minecraft 'net.minecraftforge:forge:1.17.1-37.0.109'
     implementation fg.deobf('curse.maven:catalogue-459701:3529459')
+    annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
 }
 
 jar {
@@ -83,7 +93,8 @@ jar {
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "Framework",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                "MixinConfigs" : "posture.mixins.json"
         ])
     }
 }

@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "package": "com.mrcrayfish.posture.mixin",
+  "plugin": "com.mrcrayfish.posture.mixin.PostureMixinPlugin",
+  "compatibilityLevel": "JAVA_8",
+  "minVersion": "0.8",
+  "refmap": "obfuscate.refmap.json",
+  "client": [
+    "client.AgeableListModelMixin",
+    "client.LivingRendererMixin",
+    "client.OptifineLivingRendererMixin",
+    "client.PlayerModelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+} 
