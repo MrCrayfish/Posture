@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[37,)"
+license="GPL3"
+
+[[mods]]
+modId="posture"
+version="0.1.0"
+displayName="Posture"
+updateJSONURL="https://mrcrayfish.com/modupdatejson?id=posture"
+displayURL="https://mrcrayfish.com/mods?id=posture"
+#logoFile="framework.png"
+authors="MrCrayfish"
+description="A library YEP"
+
+[[dependencies.posture]]
+    modId="forge"
+    mandatory=true
+    versionRange="[37.0.109,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.posture]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.17.1,1.18)"
+    ordering="NONE"
+    side="BOTH"
