@@ -4,7 +4,7 @@ license="GPL3"
 
 [[mods]]
 modId="posture"
-version="0.1.0"
+version="1.0.0"
 displayName="Posture"
 updateJSONURL="https://mrcrayfish.com/modupdatejson?id=posture"
 displayURL="https://mrcrayfish.com/mods?id=posture"
