@@ -10,7 +10,7 @@ updateJSONURL="https://mrcrayfish.com/modupdatejson?id=posture"
 displayURL="https://mrcrayfish.com/mods?id=posture"
 logoFile="posture.png"
 authors="MrCrayfish"
-description="A library YEP"
+description="A compatibility library allowing developers to manipulate the player model safely"
 
 [[dependencies.posture]]
     modId="forge"
