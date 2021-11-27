@@ -8,7 +8,7 @@ version="0.1.0"
 displayName="Posture"
 updateJSONURL="https://mrcrayfish.com/modupdatejson?id=posture"
 displayURL="https://mrcrayfish.com/mods?id=posture"
-#logoFile="framework.png"
+logoFile="posture.png"
 authors="MrCrayfish"
 description="A library YEP"
 
