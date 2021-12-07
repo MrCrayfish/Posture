@@ -7,28 +7,28 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
-        classpath 'org.parchmentmc:librarian:1.+'
+        //classpath 'org.parchmentmc:librarian:1.+'
         classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
-apply plugin: 'org.parchmentmc.librarian.forgegradle'
+//apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0.0-1.17.1'
+version = '1.0.0-1.18'
 group = 'com.mrcrayfish'
 archivesBaseName = 'posture'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 mixin {
     add sourceSets.main, "posture.refmap.json"
 }
 
 minecraft {
-    mappings channel: 'parchment', version: '2021.10.24-1.17.1'
+    mappings channel: 'official', version: '1.18'
 
     runs {
         client {
@@ -73,15 +73,15 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-    maven {
+    /*maven {
         url = "https://www.cursemaven.com"
-    }
+    }*/
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.17.1-37.0.109'
-    implementation fg.deobf('curse.maven:catalogue-459701:3529459')
-    annotationProcessor 'org.spongepowered:mixin:0.8.4:processor'
+    minecraft 'net.minecraftforge:forge:1.18-38.0.10'
+    //implementation fg.deobf('curse.maven:catalogue-459701:3529459')
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {
@@ -109,7 +109,7 @@ publishing {
     }
     repositories {
         maven {
-            url "file://${project.projectDir}/mcmodsrepo"
+            url "file:///X:/localmaven/mcmods"
         }
     }
 }
