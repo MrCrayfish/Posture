@@ -22,8 +22,7 @@ public class OptifineLivingRendererMixin<T extends LivingEntity, M extends Entit
     @Shadow
     protected M model;
 
-    @SuppressWarnings("UnresolvedMixinReference")
-    @Inject(method = "render", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/EntityModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"), locals = LocalCapture.CAPTURE_FAILHARD)
+    @Inject(method = "render*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/model/EntityModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"), locals = LocalCapture.CAPTURE_FAILHARD)
     public void capture(T entity, float entityYaw, float deltaTicks, PoseStack poseStack, MultiBufferSource source, int light, CallbackInfo ci, float f, float f1, float headYaw, float headPitch, float ageInTicks, float limbSwingAmount, float limbSwing)
     {
         if(entity.getType() == EntityType.PLAYER && this.model instanceof PlayerModel<?>)

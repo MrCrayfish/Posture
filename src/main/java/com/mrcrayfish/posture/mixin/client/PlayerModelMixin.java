@@ -52,8 +52,8 @@ public class PlayerModelMixin<T extends LivingEntity> extends HumanoidModel<T>
     }
 
     @SuppressWarnings({"ConstantConditions"})
-    @Inject(method = "setupAnim", at = @At(value = "HEAD"), cancellable = true)
-    private void setRotationAnglesHead(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci)
+    @Inject(method = "setupAnim*", at = @At(value = "HEAD"), cancellable = true)
+    private void setupAnimHead(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci)
     {
         if(entity.getType() != EntityType.PLAYER)
             return;
@@ -69,8 +69,8 @@ public class PlayerModelMixin<T extends LivingEntity> extends HumanoidModel<T>
     }
 
     @SuppressWarnings({"ConstantConditions"})
-    @Inject(method = "setupAnim", at = @At(value = "TAIL"))
-    private void setRotationAnglesTail(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci)
+    @Inject(method = "setupAnim*", at = @At(value = "TAIL"))
+    private void setupAnimTail(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, CallbackInfo ci)
     {
         if(entity.getType() != EntityType.PLAYER)
             return;

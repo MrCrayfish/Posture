@@ -30,7 +30,7 @@ public class AgeableListModelMixin
     }
 
     @SuppressWarnings({"ConstantConditions"})
-    @Inject(method = "renderToBuffer", at = @At(value = "TAIL"), cancellable = true)
+    @Inject(method = "renderToBuffer", at = @At(value = "TAIL"))
     public void tailRender(PoseStack poseStack, VertexConsumer consumer, int light, int overlay, float r, float g, float b, float a, CallbackInfo ci)
     {
         if(!RenderingPlayerInfo.get().isRendering((AgeableListModel<?>) (Object) this))
