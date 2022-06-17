@@ -61,7 +61,7 @@ public class PlayerModelMixin<T extends LivingEntity> extends HumanoidModel<T>
         PlayerModel<?> model = (PlayerModel<?>) (Object) this;
         this.restoreModelDefinitions();
         this.resetVisibilities();
-        if(MinecraftForge.EVENT_BUS.post(new PlayerModelEvent.Pose.Pre((Player) entity, model, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, Minecraft.getInstance().getDeltaFrameTime())))
+        if(MinecraftForge.EVENT_BUS.post(new PlayerModelEvent.Pose.Pre((Player) entity, model, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, Minecraft.getInstance().getFrameTime())))
         {
             this.updateClothes();
             ci.cancel();
@@ -76,7 +76,7 @@ public class PlayerModelMixin<T extends LivingEntity> extends HumanoidModel<T>
             return;
 
         PlayerModel<?> model = (PlayerModel<?>) (Object) this;
-        MinecraftForge.EVENT_BUS.post(new PlayerModelEvent.Pose.Post((Player) entity, model, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, Minecraft.getInstance().getDeltaFrameTime()));
+        MinecraftForge.EVENT_BUS.post(new PlayerModelEvent.Pose.Post((Player) entity, model, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, Minecraft.getInstance().getFrameTime()));
         this.updateClothes();
     }
 
